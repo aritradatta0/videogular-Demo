@@ -1,4 +1,4 @@
-<vg-player (onPlayerReady)="onPlayerReady($event)">
+<vg-player (onPlayerReady)="onPlayerReady($event)" *ngIf="_isBrowser">
   <vg-overlay-play></vg-overlay-play>
   <vg-buffering></vg-buffering>
 
@@ -43,7 +43,7 @@
 
   <video [vgMedia]="media" #media id="singleVideo" preload="auto" crossorigin>
     <source
-      src="//cors-anywhere.herokuapp.com//https://test.rtg.workers.dev/0:/Animeeeeeee/One%20Piece%20ft%20Kozuki%20Kaila%20&%20Kawamatsu%20Dono/%5BSubsPlease%5D%20One%20Piece%20-%20Wano%20Kuni%20SP5%20(1080p)%20%5B3F94C164%5D.mkv"
+      src="https://test.rtg.workers.dev/0:/Animeeeeeee/One%20Piece%20ft%20Kozuki%20Kaila%20&%20Kawamatsu%20Dono/%5BSubsPlease%5D%20One%20Piece%20-%201029%20(1080p)%20%5B083B5E54%5D.mkv"
       type="video/mp4">
     <!-- <source src="http://static.videogular.com/assets/videos/videogular.ogg" type="video/ogg">
     <source src="http://static.videogular.com/assets/videos/videogular.webm" type="video/webm"> -->
