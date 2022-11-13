@@ -11,7 +11,7 @@
     "serve:ssr": "node dist/videogular-Demo/server/main.js",
     "build:ssr": "ng build && ng run videogular-Demo:server",
     "prerender": "ng run videogular-Demo:prerender",
-    "startheroku" : "node dist/server",
+    "startheroku" : "node dist/server/main.js",
     "postinstall": "npm run build:ssr"
     
   },
