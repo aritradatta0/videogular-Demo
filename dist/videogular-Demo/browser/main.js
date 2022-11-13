@@ -60,7 +60,7 @@ __webpack_require__.r(__webpack_exports__);
 function AppComponent_vg_player_0_Template(rf, ctx) { if (rf & 1) {
     const _r3 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "vg-player", 1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("onPlayerReady", function AppComponent_vg_player_0_Template_vg_player_onPlayerReady_0_listener($event) { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r3); const ctx_r2 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](); return _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵresetView"](ctx_r2.onPlayerReady($event)); });
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("onPlayerReady", function AppComponent_vg_player_0_Template_vg_player_onPlayerReady_0_listener($event) { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r3); const ctx_r2 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](); return _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵresetView"](ctx_r2.onPlayerReady($event)); })("onUpdateState", function AppComponent_vg_player_0_Template_vg_player_onUpdateState_0_listener($event) { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r3); const ctx_r4 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](); return _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵresetView"](ctx_r4.onMediaStateChange($event)); });
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](1, "vg-overlay-play")(2, "vg-buffering");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](3, "vg-scrub-bar");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](4, "vg-scrub-bar-current-time")(5, "vg-scrub-bar-buffering-time");
@@ -68,22 +68,22 @@ function AppComponent_vg_player_0_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](6, "vg-controls", 2);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](7, "vg-play-pause")(8, "vg-playback-button");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](9, "button", 3);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function AppComponent_vg_player_0_Template_button_click_9_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r3); const ctx_r4 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](); return _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵresetView"](ctx_r4.fastBack(10)); });
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function AppComponent_vg_player_0_Template_button_click_9_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r3); const ctx_r5 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](); return _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵresetView"](ctx_r5.fastBack(10)); });
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](10, "mat-icon");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](11, "replay_10");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]()();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](12, "button", 3);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function AppComponent_vg_player_0_Template_button_click_12_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r3); const ctx_r5 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](); return _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵresetView"](ctx_r5.fastForward(10)); });
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function AppComponent_vg_player_0_Template_button_click_12_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r3); const ctx_r6 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](); return _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵresetView"](ctx_r6.fastForward(10)); });
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](13, "mat-icon");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](14, "forward_10");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]()();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](15, "button", 3);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function AppComponent_vg_player_0_Template_button_click_15_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r3); const ctx_r6 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](); return _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵresetView"](ctx_r6.fastBack(30)); });
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function AppComponent_vg_player_0_Template_button_click_15_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r3); const ctx_r7 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](); return _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵresetView"](ctx_r7.fastBack(30)); });
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](16, "mat-icon");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](17, "replay_30");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]()();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](18, "button", 3);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function AppComponent_vg_player_0_Template_button_click_18_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r3); const ctx_r7 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](); return _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵresetView"](ctx_r7.fastForward(30)); });
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function AppComponent_vg_player_0_Template_button_click_18_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r3); const ctx_r8 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](); return _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵresetView"](ctx_r8.fastForward(30)); });
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](19, "mat-icon");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](20, "forward_30");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]()();
@@ -99,7 +99,6 @@ function AppComponent_vg_player_0_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](23);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("vgMedia", _r1);
 } }
-var MP4Box = __webpack_require__(/*! mp4box */ 675);
 class AppComponent {
     constructor(http, platformId) {
         this.http = http;
@@ -110,11 +109,10 @@ class AppComponent {
     }
     ngOnInit() {
         this._isBrowser = (0,_angular_common__WEBPACK_IMPORTED_MODULE_1__.isPlatformBrowser)(this.platformId);
-        console.log(MP4Box);
     }
     onPlayerReady(event) {
         this.api = event;
-        console.log(this.api.getMasterMedia().textTracks);
+        console.log(this.api.getMasterMedia());
         this.api.getDefaultMedia().subscriptions.loadedData.subscribe((res) => {
             console.log('bhosdike', res, this.api.getDefaultMedia().track);
         });
@@ -131,13 +129,75 @@ class AppComponent {
     fastForward(time) {
         this.api.seekTime(this.currentTime + time, false);
     }
+    handleKeyboardEvent(event) {
+        if (this.api) {
+            const KEY = event.key;
+            switch (KEY) {
+                case 'ArrowLeft': {
+                    this.fastBack(10);
+                    break;
+                }
+                case 'ArrowRight': {
+                    this.fastForward(10);
+                    break;
+                }
+                case 'ArrowDown': {
+                    if (this.api.volume > 0 && this.api.volume < 1) {
+                        if (this.api.volume >= 0.10) {
+                            this.api.volume = this.api.volume - 0.10;
+                        }
+                        else {
+                            this.api.volume = 0;
+                        }
+                    }
+                    console.log((this.api.volume));
+                    break;
+                }
+                case 'ArrowUp': {
+                    if (this.api.volume > 0 && this.api.volume < 1) {
+                        if (this.api.volume <= 0.90) {
+                            this.api.volume = this.api.volume + 0.10;
+                        }
+                        else {
+                            this.api.volume = 1;
+                        }
+                    }
+                    console.log((this.api.volume));
+                    break;
+                }
+                case 'm': {
+                    if (this.api.volume === 0) {
+                        this.api.volume = 1;
+                    }
+                    else {
+                        this.api.volume = 0;
+                    }
+                }
+            }
+            if (event?.code == "Space") {
+                if (this.api.state === 'playing') {
+                    this.api.pause();
+                }
+                else {
+                    this.api.play();
+                }
+            }
+        }
+        // ArrowUp ArrowDown ArrowRight ArrowLeft
+        console.log(event);
+    }
+    onMediaStateChange(state) {
+        console.log(state);
+    }
 }
 AppComponent.ɵfac = function AppComponent_Factory(t) { return new (t || AppComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_2__.HttpClient), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_0__.PLATFORM_ID)); };
-AppComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: AppComponent, selectors: [["app-root"]], decls: 1, vars: 1, consts: [[3, "onPlayerReady", 4, "ngIf"], [3, "onPlayerReady"], [3, "vgAutohide", "vgAutohideTime"], [1, "btn-skip", 3, "click"], ["vgProperty", "current", "vgFormat", "mm:ss"], [2, "pointer-events", "none"], ["vgProperty", "left", "vgFormat", "mm:ss"], ["vgProperty", "total", "vgFormat", "mm:ss"], ["id", "singleVideo", "preload", "auto", "crossorigin", "", 3, "vgMedia"], ["media", ""], ["src", "https://test.rtg.workers.dev/0:/Animeeeeeee/One%20Piece%20ft%20Kozuki%20Kaila%20&%20Kawamatsu%20Dono/%5BSubsPlease%5D%20One%20Piece%20-%201029%20(1080p)%20%5B083B5E54%5D.mkv", "type", "video/mp4"]], template: function AppComponent_Template(rf, ctx) { if (rf & 1) {
+AppComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: AppComponent, selectors: [["app-root"]], hostBindings: function AppComponent_HostBindings(rf, ctx) { if (rf & 1) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("keydown", function AppComponent_keydown_HostBindingHandler($event) { return ctx.handleKeyboardEvent($event); }, false, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵresolveDocument"]);
+    } }, decls: 1, vars: 1, consts: [[3, "onPlayerReady", "onUpdateState", 4, "ngIf"], [3, "onPlayerReady", "onUpdateState"], [3, "vgAutohide", "vgAutohideTime"], [1, "btn-skip", 3, "click"], ["vgProperty", "current", "vgFormat", "mm:ss"], [2, "pointer-events", "none"], ["vgProperty", "left", "vgFormat", "mm:ss"], ["vgProperty", "total", "vgFormat", "mm:ss"], ["id", "singleVideo", "preload", "auto", "crossorigin", "", 3, "vgMedia"], ["media", ""], ["src", "https://test.rtg.workers.dev/0:/%5BSubsPlease%5D%20Boku%20no%20Hero%20Academia%20-%20117%20(1080p)%20%5B27059ADF%5D.mkv", "type", "video/mp4"]], template: function AppComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](0, AppComponent_vg_player_0_Template, 32, 3, "vg-player", 0);
     } if (rf & 2) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx._isBrowser);
-    } }, dependencies: [_angular_common__WEBPACK_IMPORTED_MODULE_1__.NgIf, _angular_material_icon__WEBPACK_IMPORTED_MODULE_3__.MatIcon, _videogular_ngx_videogular_core__WEBPACK_IMPORTED_MODULE_4__.VgMediaDirective, _videogular_ngx_videogular_core__WEBPACK_IMPORTED_MODULE_4__.VgPlayerComponent, _videogular_ngx_videogular_controls__WEBPACK_IMPORTED_MODULE_5__.VgControlsComponent, _videogular_ngx_videogular_controls__WEBPACK_IMPORTED_MODULE_5__.VgVolumeComponent, _videogular_ngx_videogular_controls__WEBPACK_IMPORTED_MODULE_5__.VgTrackSelectorComponent, _videogular_ngx_videogular_controls__WEBPACK_IMPORTED_MODULE_5__.VgTimeDisplayComponent, _videogular_ngx_videogular_controls__WEBPACK_IMPORTED_MODULE_5__.VgScrubBarComponent, _videogular_ngx_videogular_controls__WEBPACK_IMPORTED_MODULE_5__.VgPlaybackButtonComponent, _videogular_ngx_videogular_controls__WEBPACK_IMPORTED_MODULE_5__.VgPlayPauseComponent, _videogular_ngx_videogular_controls__WEBPACK_IMPORTED_MODULE_5__.VgMuteComponent, _videogular_ngx_videogular_controls__WEBPACK_IMPORTED_MODULE_5__.VgFullscreenComponent, _videogular_ngx_videogular_controls__WEBPACK_IMPORTED_MODULE_5__.VgScrubBarBufferingTimeComponent, _videogular_ngx_videogular_controls__WEBPACK_IMPORTED_MODULE_5__.VgScrubBarCurrentTimeComponent, _videogular_ngx_videogular_overlay_play__WEBPACK_IMPORTED_MODULE_6__.VgOverlayPlayComponent, _videogular_ngx_videogular_buffering__WEBPACK_IMPORTED_MODULE_7__.VgBufferingComponent], styles: [".btn-skip[_ngcontent-%COMP%] {\n  height: 50px;\n  background-color: transparent;\n  cursor: pointer;\n  border: none;\n  display: flex;\n  align-items: center;\n}\n.btn-skip[_ngcontent-%COMP%]   mat-icon[_ngcontent-%COMP%] {\n  color: #fff;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImFwcC5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLFlBQUE7RUFDQSw2QkFBQTtFQUNBLGVBQUE7RUFDQSxZQUFBO0VBQ0EsYUFBQTtFQUNBLG1CQUFBO0FBQ0Y7QUFDRTtFQUNFLFdBQUE7QUFDSiIsImZpbGUiOiJhcHAuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuYnRuLXNraXAge1xuICBoZWlnaHQ6IDUwcHg7XG4gIGJhY2tncm91bmQtY29sb3I6IHRyYW5zcGFyZW50O1xuICBjdXJzb3I6IHBvaW50ZXI7XG4gIGJvcmRlcjogbm9uZTtcbiAgZGlzcGxheTogZmxleDtcbiAgYWxpZ24taXRlbXM6IGNlbnRlcjtcblxuICBtYXQtaWNvbiB7XG4gICAgY29sb3I6ICNmZmY7XG4gIH1cbn0iXX0= */"] });
+    } }, dependencies: [_angular_common__WEBPACK_IMPORTED_MODULE_1__.NgIf, _angular_material_icon__WEBPACK_IMPORTED_MODULE_3__.MatIcon, _videogular_ngx_videogular_core__WEBPACK_IMPORTED_MODULE_4__.VgMediaDirective, _videogular_ngx_videogular_core__WEBPACK_IMPORTED_MODULE_4__.VgPlayerComponent, _videogular_ngx_videogular_controls__WEBPACK_IMPORTED_MODULE_5__.VgControlsComponent, _videogular_ngx_videogular_controls__WEBPACK_IMPORTED_MODULE_5__.VgVolumeComponent, _videogular_ngx_videogular_controls__WEBPACK_IMPORTED_MODULE_5__.VgTrackSelectorComponent, _videogular_ngx_videogular_controls__WEBPACK_IMPORTED_MODULE_5__.VgTimeDisplayComponent, _videogular_ngx_videogular_controls__WEBPACK_IMPORTED_MODULE_5__.VgScrubBarComponent, _videogular_ngx_videogular_controls__WEBPACK_IMPORTED_MODULE_5__.VgPlaybackButtonComponent, _videogular_ngx_videogular_controls__WEBPACK_IMPORTED_MODULE_5__.VgPlayPauseComponent, _videogular_ngx_videogular_controls__WEBPACK_IMPORTED_MODULE_5__.VgMuteComponent, _videogular_ngx_videogular_controls__WEBPACK_IMPORTED_MODULE_5__.VgFullscreenComponent, _videogular_ngx_videogular_controls__WEBPACK_IMPORTED_MODULE_5__.VgScrubBarBufferingTimeComponent, _videogular_ngx_videogular_controls__WEBPACK_IMPORTED_MODULE_5__.VgScrubBarCurrentTimeComponent, _videogular_ngx_videogular_overlay_play__WEBPACK_IMPORTED_MODULE_6__.VgOverlayPlayComponent, _videogular_ngx_videogular_buffering__WEBPACK_IMPORTED_MODULE_7__.VgBufferingComponent], styles: [".btn-skip[_ngcontent-%COMP%] {\n  height: 50px;\n  background-color: transparent;\n  cursor: pointer;\n  border: none;\n  display: flex;\n  align-items: center;\n}\n.btn-skip[_ngcontent-%COMP%]   mat-icon[_ngcontent-%COMP%] {\n  color: #fff;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImFwcC5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLFlBQUE7RUFDQSw2QkFBQTtFQUNBLGVBQUE7RUFDQSxZQUFBO0VBQ0EsYUFBQTtFQUNBLG1CQUFBO0FBQ0Y7QUFDRTtFQUNFLFdBQUE7QUFDSiIsImZpbGUiOiJhcHAuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuYnRuLXNraXAge1xyXG4gIGhlaWdodDogNTBweDtcclxuICBiYWNrZ3JvdW5kLWNvbG9yOiB0cmFuc3BhcmVudDtcclxuICBjdXJzb3I6IHBvaW50ZXI7XHJcbiAgYm9yZGVyOiBub25lO1xyXG4gIGRpc3BsYXk6IGZsZXg7XHJcbiAgYWxpZ24taXRlbXM6IGNlbnRlcjtcclxuXHJcbiAgbWF0LWljb24ge1xyXG4gICAgY29sb3I6ICNmZmY7XHJcbiAgfVxyXG59Il19 */"] });
 
 
 /***/ }),
