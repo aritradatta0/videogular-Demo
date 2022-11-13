@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "node dist/server",
+    "start": "npm run serve:ssr",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
@@ -11,7 +11,7 @@
     "serve:ssr": "node dist/videogular-Demo/server/main.js",
     "build:ssr": "ng build && ng run videogular-Demo:server",
     "prerender": "ng run videogular-Demo:prerender",
-    "startheroku" : "node dist/server/main.js",
+    "startheroku" : "node dist/server/main.j",
     "postinstall": "npm run build:ssr"
     
   },
