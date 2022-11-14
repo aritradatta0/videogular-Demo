@@ -1,0 +1,23 @@
+<!-- <div class="container">
+    <div class="row">
+        <div class="col-md-9 m-auto">
+            <div class="form-control">
+                <input type="text" [formControl]="url" matInput placeholder="Video Url">
+                <input type="text" [formControl]="Suburl" matInput placeholder="Subtitle Url">
+                <button [routerLink]="'/play/'" [queryParams]="{ link: url.value,subLink:Suburl.value}"
+                    [disabled]="url.invalid" mat-raised-button color="accent">Go to Player</button>
+            </div>
+        </div>
+    </div>
+</div> -->
+
+<div class="input-div">
+
+    <div class="form-control">
+        <input type="text" [formControl]="url" matInput placeholder="Video Url">
+        <input type="text" [formControl]="Suburl" matInput placeholder="Subtitle Url">
+        <button [routerLink]="'/play/'" [queryParams]="{ link: url.value,subLink:Suburl.value}" [disabled]="url.invalid"
+            mat-raised-button color="accent">Go to Player</button>
+    </div>
+
+</div>

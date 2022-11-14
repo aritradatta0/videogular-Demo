@@ -1,0 +1,47 @@
+.form-control {
+    border: 1px solid aqua;
+    box-shadow: rgba(32, 246, 242, 0.25) 0px 30px 60px -12px inset, rgba(42, 215, 143, 0.3) 0px 18px 36px -18px inset;
+}
+
+
+.input-div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    padding: 50px;
+    flex-direction: column;
+
+    .form-control {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 80px;
+        display: block;
+        align-items: center;
+        justify-content: center;
+
+        input {
+            margin-bottom: 20px;
+            border-radius: 10px;
+            padding: 10px;
+            border-color: aqua;
+            width: 100%;
+
+            :hover {
+                border-color: rgb(187, 36, 61);
+            }
+        }
+
+        button {
+            border-radius: 10px;
+            width: 50%;
+            margin: auto;
+        }
+    }
+}
+
+::ng-deep {
+    .mat-card {
+        border: 10px aqua !important;
+    }
+}
