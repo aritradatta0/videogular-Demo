@@ -27,8 +27,14 @@
       <button class="btn-skip" (click)="fastForward(30)">
         <mat-icon>forward_30</mat-icon>
       </button>
+
+      
   
       <vg-time-display vgProperty="current" vgFormat="mm:ss"></vg-time-display>
+
+      <div class="btn-skip" [disabled]>
+        <span  >Aritra Datta</span><mat-icon style="color: red">favorite</mat-icon>
+      </div>
   
       <vg-scrub-bar style="pointer-events: none;"></vg-scrub-bar>
   

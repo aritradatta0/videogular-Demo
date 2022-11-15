@@ -1,3 +1,5 @@
+@import url('https://fonts.cdnfonts.com/css/snell-roundhand');
+
 .btn-skip {
     height: 50px;
     background-color: transparent;
@@ -8,5 +10,14 @@
   
     mat-icon {
       color: #fff;
+    }
+
+    span{
+      color: white;
+      font-family: 'Snell Roundhand',cursive;
+      padding: 16px;
+    font-weight: 900;
+    font-size: 22px;
+    margin-left: 258px;
     }
   }

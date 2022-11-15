@@ -84,7 +84,7 @@ export class PlayVideoComponent implements OnInit {
               this.api.volume = 0
             }
           }
-          console.log((this.api.volume));
+          console.log((this.api.volume - 0.10));
           break
         }
         case 'ArrowUp': {
