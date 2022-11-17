@@ -97273,6 +97273,446 @@ VgOverlayPlayModule.ɵinj = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODUL
 
 
 
+/***/ }),
+
+/***/ 3441:
+/*!**************************************************************************************************!*\
+  !*** ./node_modules/@videogular/ngx-videogular/fesm2020/videogular-ngx-videogular-streaming.mjs ***!
+  \**************************************************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "VgDashDirective": () => (/* binding */ VgDashDirective),
+/* harmony export */   "VgHlsDirective": () => (/* binding */ VgHlsDirective),
+/* harmony export */   "VgStreamingModule": () => (/* binding */ VgStreamingModule)
+/* harmony export */ });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ 2560);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common */ 4666);
+/* harmony import */ var _videogular_ngx_videogular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @videogular/ngx-videogular/core */ 9197);
+
+
+
+
+
+
+class VgDashDirective {
+  constructor(ref, API) {
+    this.ref = ref;
+    this.API = API;
+    this.onGetBitrates = new _angular_core__WEBPACK_IMPORTED_MODULE_0__.EventEmitter();
+    this.subscriptions = [];
+  }
+
+  ngOnInit() {
+    if (this.API.isPlayerReady) {
+      this.onPlayerReady();
+    } else {
+      this.subscriptions.push(this.API.playerReadyEvent.subscribe(() => this.onPlayerReady()));
+    }
+  }
+
+  onPlayerReady() {
+    this.vgFor = this.ref.nativeElement.getAttribute('vgFor');
+    this.target = this.API.getMediaById(this.vgFor);
+    this.createPlayer();
+  }
+
+  ngOnChanges(changes) {
+    changes.vgDash?.currentValue ? this.createPlayer() : this.destroyPlayer();
+  }
+
+  createPlayer() {
+    if (this.dash) {
+      this.destroyPlayer();
+    } // It's a DASH source
+
+
+    if (this.vgDash && (this.vgDash.indexOf('.mpd') > -1 || this.vgDash.indexOf('mpd-time-csf') > -1)) {
+      let drmOptions;
+
+      if (this.vgDRMLicenseServer) {
+        drmOptions = this.vgDRMLicenseServer;
+
+        if (this.vgDRMToken) {
+          for (const drmServer in drmOptions) {
+            if (drmServer.hasOwnProperty(drmServer)) {
+              drmOptions[drmServer].httpRequestHeaders = {
+                Authorization: this.vgDRMToken
+              };
+            }
+          }
+        }
+      }
+
+      this.dash = dashjs.MediaPlayer().create();
+      this.dash.updateSettings({
+        debug: {
+          logLevel: dashjs.Debug.LOG_LEVEL_NONE
+        }
+      });
+      this.dash.initialize(this.ref.nativeElement);
+      this.dash.setAutoPlay(false);
+      this.dash.on(dashjs.MediaPlayer.events.STREAM_INITIALIZED, () => {
+        const audioList = this.dash.getBitrateInfoListFor('audio');
+        const videoList = this.dash.getBitrateInfoListFor('video');
+
+        if (audioList.length > 1) {
+          audioList.forEach(item => item.qualityIndex = ++item.qualityIndex);
+          audioList.unshift({
+            qualityIndex: 0,
+            width: 0,
+            height: 0,
+            bitrate: 0,
+            mediaType: 'video',
+            scanType: 'AUTO'
+          });
+          this.onGetBitrates.emit(audioList);
+        }
+
+        if (videoList.length > 1) {
+          videoList.forEach(item => item.qualityIndex = ++item.qualityIndex);
+          videoList.unshift({
+            qualityIndex: 0,
+            width: 0,
+            height: 0,
+            bitrate: 0,
+            mediaType: 'video',
+            scanType: 'AUTO'
+          });
+          this.onGetBitrates.emit(videoList);
+        }
+      });
+
+      if (drmOptions) {
+        this.dash.setProtectionData(drmOptions);
+      }
+
+      this.dash.attachSource(this.vgDash);
+    } else {
+      if (this.target) {
+        this.target.pause();
+        this.target.seekTime(0);
+        this.ref.nativeElement.src = this.vgDash;
+      }
+    }
+  }
+
+  setBitrate({
+    mediaType,
+    qualityIndex
+  }) {
+    if (this.dash) {
+      if (qualityIndex > 0) {
+        if (this.dash.getSettings()) {
+          this.dash.updateSettings({
+            streaming: {
+              abr: {
+                autoSwitchBitrate: {
+                  [mediaType]: false
+                }
+              }
+            }
+          });
+        }
+
+        const nextIndex = qualityIndex - 1;
+        this.dash.setQualityFor(mediaType, nextIndex);
+      } else {
+        this.dash.updateSettings({
+          streaming: {
+            abr: {
+              autoSwitchBitrate: {
+                [mediaType]: true
+              }
+            }
+          }
+        });
+      }
+    }
+  }
+
+  destroyPlayer() {
+    if (this.dash) {
+      this.dash.reset();
+      this.dash = null;
+    }
+  }
+
+  ngOnDestroy() {
+    this.subscriptions.forEach(s => s.unsubscribe());
+    this.destroyPlayer();
+  }
+
+}
+/** @nocollapse */
+
+
+VgDashDirective.ɵfac = function VgDashDirective_Factory(t) {
+  return new (t || VgDashDirective)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_0__.ElementRef), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_videogular_ngx_videogular_core__WEBPACK_IMPORTED_MODULE_1__.VgApiService));
+};
+/** @nocollapse */
+
+
+VgDashDirective.ɵdir = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineDirective"]({
+  type: VgDashDirective,
+  selectors: [["", "vgDash", ""]],
+  inputs: {
+    vgDash: "vgDash",
+    vgDRMToken: "vgDRMToken",
+    vgDRMLicenseServer: "vgDRMLicenseServer"
+  },
+  outputs: {
+    onGetBitrates: "onGetBitrates"
+  },
+  exportAs: ["vgDash"],
+  features: [_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵNgOnChangesFeature"]]
+});
+
+(function () {
+  (typeof ngDevMode === "undefined" || ngDevMode) && _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](VgDashDirective, [{
+    type: _angular_core__WEBPACK_IMPORTED_MODULE_0__.Directive,
+    args: [{
+      selector: '[vgDash]',
+      exportAs: 'vgDash'
+    }]
+  }], function () {
+    return [{
+      type: _angular_core__WEBPACK_IMPORTED_MODULE_0__.ElementRef
+    }, {
+      type: _videogular_ngx_videogular_core__WEBPACK_IMPORTED_MODULE_1__.VgApiService
+    }];
+  }, {
+    vgDash: [{
+      type: _angular_core__WEBPACK_IMPORTED_MODULE_0__.Input
+    }],
+    vgDRMToken: [{
+      type: _angular_core__WEBPACK_IMPORTED_MODULE_0__.Input
+    }],
+    vgDRMLicenseServer: [{
+      type: _angular_core__WEBPACK_IMPORTED_MODULE_0__.Input
+    }],
+    onGetBitrates: [{
+      type: _angular_core__WEBPACK_IMPORTED_MODULE_0__.Output
+    }]
+  });
+})();
+
+class VgHlsDirective {
+  constructor(ref, API) {
+    this.ref = ref;
+    this.API = API;
+    this.vgHlsHeaders = {};
+    this.onGetBitrates = new _angular_core__WEBPACK_IMPORTED_MODULE_0__.EventEmitter();
+    this.subscriptions = [];
+  }
+
+  ngOnInit() {
+    if (this.API.isPlayerReady) {
+      this.onPlayerReady();
+    } else {
+      this.subscriptions.push(this.API.playerReadyEvent.subscribe(() => this.onPlayerReady()));
+    }
+  }
+
+  onPlayerReady() {
+    this.crossorigin = this.ref.nativeElement.getAttribute('crossorigin');
+    this.preload = this.ref.nativeElement.getAttribute('preload') !== 'none';
+    this.vgFor = this.ref.nativeElement.getAttribute('vgFor');
+
+    if (this.vgFor) {
+      this.target = this.API.getMediaById(this.vgFor);
+    } else {
+      this.target = this.API.getDefaultMedia();
+    }
+
+    this.config = {
+      autoStartLoad: this.preload
+    }; // @ts-ignore
+
+    this.config.xhrSetup = xhr => {
+      // Send cookies
+      if (this.crossorigin === 'use-credentials') {
+        xhr.withCredentials = true;
+      }
+
+      for (const key of Object.keys(this.vgHlsHeaders)) {
+        xhr.setRequestHeader(key, this.vgHlsHeaders[key]);
+      }
+    };
+
+    this.createPlayer();
+
+    if (!this.preload) {
+      this.subscriptions.push(this.API.subscriptions.play.subscribe(() => {
+        if (this.hls) {
+          this.hls.startLoad(0);
+        }
+      }));
+    }
+  }
+
+  ngOnChanges(changes) {
+    if (changes.vgHls?.currentValue) {
+      this.createPlayer();
+    } else if (changes.vgHlsHeaders && changes.vgHlsHeaders.currentValue) {// Do nothing. We don't want to create a or destroy a player if the headers change.
+    } else {
+      this.destroyPlayer();
+    }
+  }
+
+  createPlayer() {
+    if (this.hls) {
+      this.destroyPlayer();
+    } // It's a HLS source
+
+
+    if (this.vgHls && this.vgHls.indexOf('m3u8') > -1 && Hls.isSupported() && this.API.isPlayerReady) {
+      const video = this.ref.nativeElement;
+      this.hls = new Hls(this.config); // @ts-ignore
+
+      this.hls.on(Hls.Events.MANIFEST_PARSED, (_event, data) => {
+        const videoList = [];
+        videoList.push({
+          qualityIndex: 0,
+          width: 0,
+          height: 0,
+          bitrate: 0,
+          mediaType: 'video',
+          label: 'AUTO'
+        });
+        data.levels.forEach((item, index) => {
+          videoList.push({
+            qualityIndex: ++index,
+            width: item.width,
+            height: item.height,
+            bitrate: item.bitrate,
+            mediaType: 'video',
+            label: item.name
+          });
+        });
+        this.onGetBitrates.emit(videoList);
+      }); // @ts-ignore
+
+      this.hls.on(Hls.Events.LEVEL_LOADED, (_event, data) => {
+        this.target.isLive = data.details.live;
+      });
+      this.hls.loadSource(this.vgHls);
+      this.hls.attachMedia(video);
+    } else {
+      if (this.target && !!this.target.pause) {
+        this.target.pause();
+        this.target.seekTime(0);
+        this.ref.nativeElement.src = this.vgHls;
+      }
+    }
+  }
+
+  setBitrate(bitrate) {
+    if (this.hls) {
+      this.hls.nextLevel = bitrate.qualityIndex - 1;
+    }
+  }
+
+  destroyPlayer() {
+    if (this.hls) {
+      this.hls.destroy();
+      this.hls = null;
+    }
+  }
+
+  ngOnDestroy() {
+    this.subscriptions.forEach(s => s.unsubscribe());
+    this.destroyPlayer();
+    delete this.hls;
+  }
+
+}
+/** @nocollapse */
+
+
+VgHlsDirective.ɵfac = function VgHlsDirective_Factory(t) {
+  return new (t || VgHlsDirective)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_0__.ElementRef), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_videogular_ngx_videogular_core__WEBPACK_IMPORTED_MODULE_1__.VgApiService));
+};
+/** @nocollapse */
+
+
+VgHlsDirective.ɵdir = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineDirective"]({
+  type: VgHlsDirective,
+  selectors: [["", "vgHls", ""]],
+  inputs: {
+    vgHls: "vgHls",
+    vgHlsHeaders: "vgHlsHeaders"
+  },
+  outputs: {
+    onGetBitrates: "onGetBitrates"
+  },
+  exportAs: ["vgHls"],
+  features: [_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵNgOnChangesFeature"]]
+});
+
+(function () {
+  (typeof ngDevMode === "undefined" || ngDevMode) && _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](VgHlsDirective, [{
+    type: _angular_core__WEBPACK_IMPORTED_MODULE_0__.Directive,
+    args: [{
+      selector: '[vgHls]',
+      exportAs: 'vgHls'
+    }]
+  }], function () {
+    return [{
+      type: _angular_core__WEBPACK_IMPORTED_MODULE_0__.ElementRef
+    }, {
+      type: _videogular_ngx_videogular_core__WEBPACK_IMPORTED_MODULE_1__.VgApiService
+    }];
+  }, {
+    vgHls: [{
+      type: _angular_core__WEBPACK_IMPORTED_MODULE_0__.Input
+    }],
+    vgHlsHeaders: [{
+      type: _angular_core__WEBPACK_IMPORTED_MODULE_0__.Input
+    }],
+    onGetBitrates: [{
+      type: _angular_core__WEBPACK_IMPORTED_MODULE_0__.Output
+    }]
+  });
+})();
+
+class VgStreamingModule {}
+/** @nocollapse */
+
+
+VgStreamingModule.ɵfac = function VgStreamingModule_Factory(t) {
+  return new (t || VgStreamingModule)();
+};
+/** @nocollapse */
+
+
+VgStreamingModule.ɵmod = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineNgModule"]({
+  type: VgStreamingModule
+});
+/** @nocollapse */
+
+VgStreamingModule.ɵinj = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjector"]({
+  imports: [_angular_common__WEBPACK_IMPORTED_MODULE_2__.CommonModule, _videogular_ngx_videogular_core__WEBPACK_IMPORTED_MODULE_1__.VgCoreModule]
+});
+
+(function () {
+  (typeof ngDevMode === "undefined" || ngDevMode) && _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](VgStreamingModule, [{
+    type: _angular_core__WEBPACK_IMPORTED_MODULE_0__.NgModule,
+    args: [{
+      imports: [_angular_common__WEBPACK_IMPORTED_MODULE_2__.CommonModule, _videogular_ngx_videogular_core__WEBPACK_IMPORTED_MODULE_1__.VgCoreModule],
+      declarations: [VgDashDirective, VgHlsDirective],
+      exports: [VgDashDirective, VgHlsDirective]
+    }]
+  }], null, null);
+})();
+/**
+ * Generated bundle index. Do not edit.
+ */
+
+
+
+
 /***/ })
 
 }]);

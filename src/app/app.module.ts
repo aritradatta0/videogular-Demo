@@ -12,6 +12,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { PlayVideoComponent } from './play-video/play-video.component';
 import { InputComponent } from './input/input.component';
+import {VgStreamingModule} from '@videogular/ngx-videogular/streaming';
 
 import { MatInputModule } from '@angular/material/input';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -40,6 +41,7 @@ import { MatCardModule } from '@angular/material/card';
     FormsModule,
     MatButtonModule,
     MatCardModule,
+    VgStreamingModule,
     MatFormFieldModule
   ],
   providers: [],

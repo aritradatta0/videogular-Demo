@@ -32,7 +32,7 @@
   
       <vg-time-display vgProperty="current" vgFormat="mm:ss"></vg-time-display>
 
-      <div class="btn-skip" [disabled]>
+      <div class="btn-skip" disabled>
         <span  >Aritra Datta</span><mat-icon style="color: red">favorite</mat-icon>
       </div>
   
@@ -40,22 +40,25 @@
   
       <vg-time-display vgProperty="left" vgFormat="mm:ss"></vg-time-display>
       <vg-time-display vgProperty="total" vgFormat="mm:ss"></vg-time-display>
-  
+      <vg-quality-selector *ngIf="hlsBitrates" [bitrates]="hlsBitrates"
+                             (onBitrateChange)="vgHls.setBitrate($event)">
+        </vg-quality-selector>
       <vg-track-selector></vg-track-selector>
       <vg-mute></vg-mute>
       <vg-volume></vg-volume>
   
       <vg-fullscreen></vg-fullscreen>
     </vg-controls>
-  
-    <video [vgMedia]="media" #media id="singleVideo" preload="auto" crossorigin>
-      <source
+  <!-- [vgDash]="this.videoUrl" -->
+    <video [vgMedia]="$any(media)" #vgHls="vgHls"   [vgHls]="this.videoUrl"
+    (onGetBitrates)="hlsBitrates = $event" #media id="singleVideo" preload="auto" crossorigin>
+      <!-- <source
         [src]="this.videoUrl ? this.videoUrl :'https://test.rtg.workers.dev/0:/%5BSubsPlease%5D%20Boku%20no%20Hero%20Academia%20-%20117%20(1080p)%20%5B27059ADF%5D.mkv'"
-        type="video/mp4">
+        type="video/mp4"> -->
       <!-- <source src="http://static.videogular.com/assets/videos/videogular.ogg" type="video/ogg">
       <source src="http://static.videogular.com/assets/videos/videogular.webm" type="video/webm"> -->
   
-      <track kind="subtitles" label="English" [src]="subtitleUrl"
+      <track *ngIf="subtitleUrl" kind="subtitles" label="English" [src]="subtitleUrl"
         srclang="en" default>
       <!-- <track kind="subtitles" label="Español" src="http://static.videogular.com/assets/subs/pale-blue-dot-es.vtt"
         srclang="es"> -->

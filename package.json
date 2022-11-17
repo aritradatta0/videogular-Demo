@@ -1,5 +1,5 @@
 {
-  "name": "Anime Stream",
+  "name": "videogular-Demo",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
@@ -30,8 +30,10 @@
     "@nguniversal/express-engine": "^14.2.2",
     "@popperjs/core": "^2.10.2",
     "@videogular/ngx-videogular": "^6.0.0",
+    "dashjs": "^4.5.1",
     "domino": "^2.1.6",
     "express": "^4.15.2",
+    "hls.js": "^1.2.7",
     "mock-browser": "^0.92.14",
     "mp4box": "^0.5.2",
     "rxjs": "~7.5.0",

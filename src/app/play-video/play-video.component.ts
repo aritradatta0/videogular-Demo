@@ -10,6 +10,7 @@ import { VgApiService } from '@videogular/ngx-videogular/core';
   styleUrls: ['./play-video.component.scss']
 })
 export class PlayVideoComponent implements OnInit {
+  hlsBitrates:any;
   title = 'videogular-Demo';
   api!: VgApiService;
   media!: HTMLVideoElement
